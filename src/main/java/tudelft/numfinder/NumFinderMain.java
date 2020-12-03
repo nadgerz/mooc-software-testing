@@ -2,16 +2,20 @@ package tudelft.numfinder;
 
 public class NumFinderMain {
 
-    public static void main (String[] args) {
-        NumFinder nf = new NumFinder();
+    public static void main(String[] args) {
+        NumFinder nf1 = new NumFinder();
 
         // this works
-        // nf.find(new int[] {4, 25, 7, 9});
+        nf1.find(new int[]{4, 25, 7, 9});
+        System.out.println(nf1.getLargest());
+        System.out.println(nf1.getSmallest());
 
-        // this crashes
-        nf.find(new int[] {4, 3, 2, 1});
 
-        System.out.println(nf.getLargest());
-        System.out.println(nf.getSmallest());
+        NumFinder nf2 = new NumFinder();
+
+        // this no longer crashes
+        nf2.find(new int[]{4, 3, 2, 1});
+        System.out.println(nf2.getLargest());
+        System.out.println(nf2.getSmallest());
     }
 }
