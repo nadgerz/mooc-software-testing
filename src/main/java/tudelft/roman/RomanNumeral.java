@@ -40,6 +40,8 @@ public class RomanNumeral {
                 convertedNumber += thisCharVal;
             }
 
+            // VX and XXC should fail!
+
 /*
             if (s.charAt(i) == 'I') convertedNumber += 1;
             if (s.charAt(i) == 'V') convertedNumber += 5;
