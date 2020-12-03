@@ -22,6 +22,25 @@ public class RomanNumeral {
         int convertedNumber = 0;
 
         for (int i = 0; i < s.length(); i++) {
+            char thisChar = s.charAt(i);
+            int thisCharVal = map.get(thisChar);
+
+            char nextChar;
+            int nextCharVal = 0;
+
+            if ((i + 1) != s.length()) {
+                nextChar = s.charAt(i + 1);
+                nextCharVal = map.get(nextChar);
+            }
+
+            if (nextCharVal > thisCharVal) {
+                convertedNumber += nextCharVal - thisCharVal;
+                i++;
+            } else {
+                convertedNumber += thisCharVal;
+            }
+
+/*
             if (s.charAt(i) == 'I') convertedNumber += 1;
             if (s.charAt(i) == 'V') convertedNumber += 5;
             if (s.charAt(i) == 'X') convertedNumber += 10;
@@ -29,6 +48,7 @@ public class RomanNumeral {
             if (s.charAt(i) == 'C') convertedNumber += 100;
             if (s.charAt(i) == 'D') convertedNumber += 500;
             if (s.charAt(i) == 'M') convertedNumber += 1000;
+*/
         }
 
         return convertedNumber;
