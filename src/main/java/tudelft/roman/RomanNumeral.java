@@ -19,6 +19,22 @@ public class RomanNumeral {
     }
 
     public int convert(String s) {
+        int convertedNumber = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == 'I') convertedNumber += 1;
+            if (s.charAt(i) == 'V') convertedNumber += 5;
+            if (s.charAt(i) == 'X') convertedNumber += 10;
+            if (s.charAt(i) == 'L') convertedNumber += 50;
+            if (s.charAt(i) == 'C') convertedNumber += 100;
+            if (s.charAt(i) == 'D') convertedNumber += 500;
+            if (s.charAt(i) == 'M') convertedNumber += 1000;
+        }
+
+        return convertedNumber;
+    }
+
+    public int _convert(String s) {
 
         int convertedNumber = 0;
         for (int i = 0; i < s.length(); i++) {
